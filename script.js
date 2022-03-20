@@ -3,6 +3,7 @@ const $saved = document.getElementById('saved');
 const $form = document.getElementById('form');
 const $title = document.getElementById('title');
 const $datetime = document.getElementById('datetime');
+const $userName = document.getElementById('userName');
 
 //date constructor: Date()
 // create a date instances using new 
@@ -17,35 +18,50 @@ const options = {
 }
 
 //Data for Usename
+//insert today into the $today
+$today.textContent = today.toLocaleString('en-CA', options);
+
 
 
 //insert today into the $today
 $today.textContent = today.toLocaleString('en-CA', options);
-$form.addEventListener('submit', save);
+$form.addEventListener('submit', function (e) {
+            e.preventDefault()
 
-e.preventDefault()
+            //get the title
+            const title = $title.value
 
-//get the title
-const title = $title.value;
+            //get the datetime
+            //create a date instance using new
+            const datetime = new Date($datetime.value);
 
-//get the datetime
-//create a date instance using new
-const datetime = new Date($datetime.value);
-
-$saved.textContent = `${title} was saved on ${datetime.toLocaleString('en-CA', options)}`;
-})
+            $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
 
 
-// $form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     const title = $title.value;
-//     const datetime = $datetime.value;
-//     const event = {
-//         title,
-//         datetime
-//     }
-//     //save to local storage
-//     saveEvent(event);
-//     //clear the form
-//     $form.reset();
-// })
+            //create a data object
+            //store datetime as timestamp
+            const data = {
+                title: title,
+                timestamp: datetime.getTime()
+            }
+
+
+
+            //store time in local storage
+            localStorage.setItem('savedDate', JSON.stringify(data))
+        })
+        //geting savedDate data from local storage
+
+        const ls = localStorage.getItem('savedDate')
+        //if no savedDate, is equal to null
+        
+        if(ls) {
+            //convert string to object
+            const data = JSON.parse(ls)
+
+            const title = data.title
+            const datetime = new Date(data.timestamp)
+           //display the title date
+           $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
+        }
+        
