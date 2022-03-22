@@ -26,42 +26,58 @@ $today.textContent = today.toLocaleString('en-CA', options);
 //insert today into the $today
 $today.textContent = today.toLocaleString('en-CA', options);
 $form.addEventListener('submit', function (e) {
-            e.preventDefault()
+    e.preventDefault()
 
-            //get the title
-            const title = $title.value
+    //get the title
+    const title = $title.value
 
-            //get the datetime
-            //create a date instance using new
-            const datetime = new Date($datetime.value);
+    //get the datetime
+    //create a date instance using new
+    const datetime = new Date($datetime.value);
 
-            $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
-
-
-            //create a data object
-            //store datetime as timestamp
-            const data = {
-                title: title,
-                timestamp: datetime.getTime()
-            }
+    $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
 
 
+    //create a data object
+    //store datetime as timestamp
+    const data = {
+        title: title,
+        timestamp: datetime.getTime()
+    }
 
-            //store time in local storage
-            localStorage.setItem('savedDate', JSON.stringify(data))
-        })
-        //geting savedDate data from local storage
 
-        const ls = localStorage.getItem('savedDate')
-        //if no savedDate, is equal to null
-        
-        if(ls) {
-            //convert string to object
-            const data = JSON.parse(ls)
 
-            const title = data.title
-            const datetime = new Date(data.timestamp)
-           //display the title date
-           $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
-        }
-        
+    //store time in local storage
+    localStorage.setItem('savedDate', JSON.stringify(data))
+})
+//geting savedDate data from local storage
+
+const ls = localStorage.getItem('savedDate')
+//if no savedDate, is equal to null
+
+if (ls) {
+    //convert string to object
+    const data = JSON.parse(ls)
+
+    const title = data.title
+    const datetime = new Date(data.timestamp)
+    //display the title date
+    $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
+}
+
+// Lecture : 16 Demo
+
+// select the elements
+const $list = $('#list');
+const $items = $('.list-group-items');
+
+
+//Manipulating the DOM
+//Also can add properties to the elements
+$list.addClass('p-5 bg-light');
+
+$items.css({
+    'color': 'red',
+    'font-size': '20px'
+
+})
