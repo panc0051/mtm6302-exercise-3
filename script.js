@@ -69,15 +69,32 @@ if (ls) {
 
 // select the elements
 const $list = $('#list');
-const $items = $('.list-group-items');
+const $items = $('.list-group-item')
 
 
 //Manipulating the DOM
 //Also can add properties to the elements
-$list.addClass('p-5 bg-light');
+$list.addClass('p-5 bg-light')
 
 $items.css({
     'color': 'red',
-    'font-size': '20px'
-
+    'font-weight': 'bold'
 })
+
+//create a data array
+const items = [
+    'milk',
+    'bread',
+    'eggs',
+    'cheese',
+    'butter'
+]
+//create function to the build list
+function buildList(){
+    const html = []
+
+    for(const item of items) {
+        html.push(`<li class="list-group-item">${item}</li>
+        `)
+    }
+}
