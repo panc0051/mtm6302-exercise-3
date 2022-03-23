@@ -53,18 +53,18 @@ $formB.addEventListener('submit', function (e) {
 })
 //geting savedDate data from local storage
 
-const ls = localStorage.getItem('savedDate')
+//const ls = localStorage.getItem('savedDate')
 //if no savedDate, is equal to null
 
-if (ls) {
-    //convert string to object
-    const data = JSON.parse(ls)
+// if (ls) {
+//     //convert string to object
+//     const data = JSON.parse(ls)
 
-    const title = data.title
-    const datetime = new Date(data.timestamp)
-    //display the title date
-    $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
-}
+//     const title = data.title
+//     const datetime = new Date(data.timestamp)
+//     //display the title date
+//     $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
+// }
 
 // Lecture : 16 Demo
 
@@ -128,9 +128,11 @@ $list.on('click', 'li', function (e) {
 //retrieve the HTML elements
 const $body = document.body
 const $title1 = document.getElementById('title1')
-const $form1 = document.getElementById('form1')
+const $form = document.getElementById('form')
 const $bgcolor = document.getElementById('bgcolor')
 const $invert = document.getElementById('invert')
+const $font = document.getElementById('font')
+const $placeholder = document.getElementById('placeholder')
 
 function setBackground() {
     //to check if a checkbox is checked
@@ -157,9 +159,60 @@ $bgcolor.addEventListener('change', setBackground)
 $invert.addEventListener('change', setBackground)
 
 
+//Setting the font family
+function setFontFamily() {
+    $body.style.fontFamily = $font.value
+}
+
+//listen for change to font
+$font.addEventListener('change', setFontFamily)
+
+//listen for change to placeholder
+function setTitle(){
+    if($placeholder.value){
+        $title.textContent = $placeholder.value
+    } else {
+        $title.textContent = 'Theme Generator'
+    }
+
+}
+
+//Setting the placeholder
+$placeholder.addEventListener('input', setTitle)
+
 //form event listener
 //prevent the default action
-$form1.addEventListener('submit', function (e) {
+$form.addEventListener('submit', function (e) {
 e.preventDefault()
 
+const settings = {
+    bgcolor: $bgcolor.value,
+    invert: $invert.checked,
+    font: $font.value,
+    placeholder: $placeholder.value
+}
+//store settings in local storage
+localStorage.setItem('settings',
+ JSON.stringify(settings))
+
 })
+
+//get setting from local storage
+const ls = localStorage.getItem('settings')
+
+// if there is no data in local storage
+//it will return null
+//will be true if there is data in local storage
+
+if(ls){
+    const settings = JSON.parse(ls)
+    $bgcolor.value = settings.bgcolor
+    $invert.checked = settings.invert
+    $font.value = settings.font
+    $placeholder.value = settings.placeholder
+
+    
+    setBackground()
+    setFontFamily()
+    setTitle()
+}
