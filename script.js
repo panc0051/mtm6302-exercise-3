@@ -4,7 +4,6 @@ const $saved = document.getElementById('saved');
 const $formB = document.getElementById('formB');
 const $title = document.getElementById('title');
 const $datetime = document.getElementById('datetime');
-const $userName = document.getElementById('userName');
 
 //date constructor: Date()
 // create a date instances using new 
@@ -76,14 +75,11 @@ const $item = $('#item')
 
 //create data array
 const items = [
-    'milk',
-    'bread',
-    'eggs',
-    'cheese',
-    'butter',
-    'sugar',
-    'tea',
-    'coffee',
+    'C++',
+    'Java',
+    'Python',
+    'JavaScript',
+    
 ]
 //create function to build list
 
@@ -216,3 +212,24 @@ if(ls){
     setFontFamily()
     setTitle()
 }
+// Reinvent from here!
+
+//retrieve the HTML elements
+const $jobForm = document.getElementById('jobForm')
+const $jobFormBtn = document.getElementById('jobFormBtn')
+const $jobTitle = document.getElementById('job_title')
+const $jobRequiremnet = document.getElementById('job_requirement')
+const $jobCompany = document.getElementById('job_company')
+const $jobDeadline = document.getElementById('job_deadline')
+const $jobDescription = document.getElementById('job_description')
+const $jobList = document.getElementById('jobList')
+const $jobSalary = document.getElementById('job_salary')
+const $jobLocation = document.getElementById('job_location')
+const $jobType = document.getElementById('job_type')
+const $jobCategory = document.getElementById('job_category')
+const $jobExperience = document.getElementById('job_experience')
+
+//stop refreshing when submit button is clicked
+$jobFormBtn.addEventListener('click', function (e) {
+    e.preventDefault()
+} )
