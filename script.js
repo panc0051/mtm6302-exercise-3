@@ -35,7 +35,7 @@ $formB.addEventListener('submit', function (e) {
     //create a date instance using new
     const datetime = new Date($datetime.value);
 
-    $saved.textContent = `${title}: ${datetime.toLocaleString('en-CA', options)}`;
+    $saved.textContent = `${title}.your profile has been sent to Office on ${datetime.toLocaleString('en-CA', options)}`;
 
 
     //create a data object
@@ -213,23 +213,30 @@ if(ls){
     setTitle()
 }
 // Reinvent from here!
-
 //retrieve the HTML elements
-const $jobForm = document.getElementById('jobForm')
-const $jobFormBtn = document.getElementById('jobFormBtn')
-const $jobTitle = document.getElementById('job_title')
-const $jobRequiremnet = document.getElementById('job_requirement')
-const $jobCompany = document.getElementById('job_company')
-const $jobDeadline = document.getElementById('job_deadline')
-const $jobDescription = document.getElementById('job_description')
-const $jobList = document.getElementById('jobList')
-const $jobSalary = document.getElementById('job_salary')
-const $jobLocation = document.getElementById('job_location')
-const $jobType = document.getElementById('job_type')
-const $jobCategory = document.getElementById('job_category')
-const $jobExperience = document.getElementById('job_experience')
+$card = document.getElementById('card')
 
-//stop refreshing when submit button is clicked
-$jobFormBtn.addEventListener('click', function (e) {
+//stop card from refreshing
+$card.addEventListener('submit', function (e) {
     e.preventDefault()
+
+})
+
+
+//Clicking on the "save" button will save the current form data to local storage.
+$('#save').on('click', function () {
+    const settings = {
+        bgcolor: $bgcolor.value,
+        invert: $invert.checked,
+        font: $font.value,
+        placeholder: $placeholder.value
+    }
+    //store settings in local storage
+    localStorage.setItem('settings',
+     JSON.stringify(settings))
+})
+
+//Message Appear when clicked on jobFormBtn
+$('#jobFormBtn').on('click', function () {
+    $('#jobForm').toggle()
 } )
