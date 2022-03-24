@@ -35,7 +35,8 @@ $formB.addEventListener('submit', function (e) {
     //create a date instance using new
     const datetime = new Date($datetime.value);
 
-    $saved.textContent = `${title}.your profile has been sent to Office on ${datetime.toLocaleString('en-CA', options)}`;
+    $saved.textContent = `Application Sent 
+    successfully.${title}.your profile has been sent to Office on ${datetime.toLocaleString('en-CA', options)}`;
 
 
     //create a data object
@@ -215,6 +216,7 @@ if(ls){
 // Reinvent from here!
 //retrieve the HTML elements
 $card = document.getElementById('card')
+$jobForm = document.getElementById('jobForm')
 
 //stop card from refreshing
 $card.addEventListener('submit', function (e) {
@@ -236,7 +238,12 @@ $('#save').on('click', function () {
      JSON.stringify(settings))
 })
 
-//Message Appear when clicked on jobFormBtn
-$('#jobFormBtn').on('click', function () {
-    $('#jobForm').toggle()
-} )
+//A "success" message is displayed after the form is submitted.
+function showMessage() {
+    $('#message').text('Your profile has been saved')
+    $('#message').show()
+    setTimeout(function () {
+        $('#message').hide()
+    }, 1000)
+}
+showMessage()
