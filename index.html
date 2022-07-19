@@ -2,255 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Job Listing</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    
-    <h1 class="display-1 text-center">Job forum</h1>
-    <div id="today" class="text-center"></div>
-    <!-- adding job requirement template -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card" id="card">
-                    <div class="card-body">
-                        <h2 class="card-title">Public Company Limited</h2>
-                        <form method="post" class="jobForm">
-                            <div class="form-group">
-                                <label for="job_title">Welcome to Ottawa Job Center</label>
-                               
-                            </div>
-                            <div class="form-group">
-                                <label for="job_description">Job Description</label>
-                                <textarea class="form-control" id="job_description" name="job_description"
-                                    rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. 
+  <header class="profile-header">
+    <h1>Job Listing</h1>
+    <!--Form Requirement 
+    The form should include at least one textbox, one selectbox, one checkbox, and one textarea.
+  -->
+    <form action="" class="form">
+      <!-- one text box -->
+      <label for="">Job Title</label>
+      <input type="text" name="job_title" id="job_title" placeholder="Job Title">
+      <br>
+      <!-- one select box -->
+      <label for="">Job Type</label>
+      <select name="job_type" id="job_type">
+        <option value="">Select Job Type</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+        <option value="Contract">Contract</option>
+        <option value="Internship">Internship</option>
+      </select>
+      <br>
+      <!-- one check box -->
+      <label for="">Job Location</label>
+      <input type="checkbox" name="job_location" id="job_location" value="Remote">Remote
+      <input type="checkbox" name="job_location" id="job_location" value="Local">Local
+      <!-- one text area -->
+      <br>
+      <label for="">Job Description</label>
+      <textarea name="job_description" id="job_description" cols="30" rows="10"></textarea>
+      <!-- submit button -->
+      <input type="submit" value="Submit">
 
-                                    Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. 
-                                    
-                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. 
-                                    
-                                    Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. 
-                                    
-                                    Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula. 
-                                    
-                                    
-                                    </textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="job_requirement">Job Requirement</label>
-                                <textarea class="form-control" id="job_requirement" name="job_requirement"
-                                    rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. 
 
-                                    Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. 
-                                    
-                                    </textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="job_salary">Job Salary</label>
-                                <input type="text" class="form-control" id="job_salary" name="job_salary"
-                                    placeholder="Enter job salary">
-                            </div>
-                            <div class="form-group">
-                                <label for="job_location">Job Location</label>
-                                <input type="text" class="form-control" id="job_location" name="job_location"
-                                    placeholder="Enter job location">
-                            </div>
-                            <div class="form-group">
-                                <label for="job_type">Job Type</label>
-                                <select class="form-control" id="job_type" name="job_type">
-                                   
-                                    <option>Full Time</option>
-                                    <option>Part Time</option>
-                                    <option>Internship</option>
-                                </select>
-                                <input type="checkbox" name="job_type" value="Full Time"> I would also Like to work Remotely  <br> 
-                                <input type="checkbox" name="job_type" value="Part Time"> I would also take Hybrid option <br>
-                            </div>
-                            <div class="form-group">
-                                <label for="job_category">Job Category</label>
-                                <select class="form-control" id="job_category" name="job_category">
-                                    <option>IT</option>
-                                    <option>Finance</option>
-                                    <option>Sales</option>
-                                    <option>Marketing</option>
-                                    <option>HR</option>
-                                    <option>Accounting</option>
-                                    <option>Admin</option>
-                                    <option>IT</option>
-                                    <option>Finance</option>
-                                    <option>Sales</option>
-                                    <option>Marketing</option>
-                                    <option>HR</option>
-                                    <option>Accounting</option>
-                                    <option>Admin</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="job_experience">Job Experience</label>
-                                <select class="form-control" id="job_experience" name="job_experience">
-                                    <option>1 year</option>
-                                    <option>2 years</option>
-                                    <option>3 years</option>
-                                    <option>4 years</option>
-                                    <option>5 years</option>
-                                    <option>6 years</option>
-                                    <option>7 years</option>
-                                    <option>8 years</option>
-                                    <option>9 years</option>
-                                    <option>10 years</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- adding job requirement template -->
-    
 
-    <!-- End of job form -->
-
-  
-
-    <!-- Start of to do list -->
-
-    <div class="container col-md-12 border border-info">
-        <br>
-        <h4>ADD Skills</h4>
-
-        <p>Here Add some of your hard and soft skills</p>
-        <div class="row">
-            <div class="col">
-                
-                <form id="formAdd" class="form">
-                    <input type="text" id="item" class="form-control" placeholder="Add a new item">
-                </form>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <ul id="list" class="list-group my-3">
-                  
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- End of to do list -->
-
-    <div id="today"></div>
-    <div id="saved"></div>
-    <!-- formB -->
-    <form id="formB" class="p-5 bg-light my-3 border border-info">
-        <p>Conform your name and select date for you submission</p>
-        <label class="form-label">Your Full Name</label>
-        <input id="title" type="text" class="form-control">
-
-        <label class="form-label">Date an Time</label>
-        <input id="datetime" type="datetime-local" class="form-control ">
-        <input type="checkbox" name="job_type" value="Part Time"> I accept Terms and Conditions. <br>
-
-<br>
-        <button class="btn btn-primary">Save Date</button>
-    </form>
-    
-
-    <!-- Start of Theme BUilder -->
- 
-    <h4 id="title1" class="text-center mb-5">Theme Generater</h4>
-    <form class="form1 p-5 bg-light text-dark m-5" id="form">
-        <label class="form-label">BackGround Color</label>
-        <input id="bgcolor" type="text" class="form-control mb-3" placeholder="Background Color">
-        <!-- adding checkbox -->
-        <div class="form-check p-0 mb-3">
-            <input id="invert" type="checkbox" class="form-check-input me-2">
-            <label class="form-check-label" for="invert">Invert Color</label>
-        </div>
-        <!-- select option -->
-        <label class="form-label">Font Family</label>
-        <select id="font" class="form-select mb-3">
-            <option value=""></option>
-            <option value="Arial">Arial</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Comic Sans MS">Comic Sans MS</option>
-            <option value="Courier New">Courier New</option>
-            <option value="Georgia">Georgia</option>
-        </select>
-        <label class="form-label">Placeholder text</label>
-        <textarea id="placeholder" class="form-control mb-3" placeholder="Placeholder text"></textarea>
-        <!-- End of Select Option -->
-        <button class="btn btn-secondary">Save</button>
     </form>
 
-
-    <!-- End of Theme Builder -->
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="script.js"></script>
 </body>
 
 </html>
-
-<!-- 
-
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Enter title">
-        </div>
-
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" class="form-control" id="company" placeholder="Enter company">
-        </div>
-
-        <div class="form-group">
-            <label for="salary">Salary</label>
-            <input type="text" class="form-control" id="salary" placeholder="Enter salary">
-        </div>
-
-        <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" class="form-control" id="location" placeholder="Enter location">
-        </div>
-
-        <div class="form-group">
-            <label for="type">Type</label>
-            <select class="form-control" id="type">
-                <option>Full Time</option>
-                <option>Part Time</option>
-                <option>Freelance</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="apply">Apply</label>
-            <input type="text" class="form-control" id="apply" placeholder="Enter apply">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>
-
- -->
