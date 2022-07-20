@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Job Listing</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,33 +15,46 @@
     <!--Form Requirement 
     The form should include at least one textbox, one selectbox, one checkbox, and one textarea.
   -->
-    <form action="" class="form">
+    <form action="" class="form" id="form">
       <!-- one text box -->
-      <label for="">Job Title</label>
-      <input type="text" name="job_title" id="job_title" placeholder="Job Title">
+      <div class="form-title" id="form-title">
+        <label for="">Full Name</label>
+        <input type="text" name="job_title" id="job_title" placeholder="Job Title">
+      </div>
       <br>
       <!-- one select box -->
-      <label for="">Job Type</label>
-      <select name="job_type" id="job_type">
-        <option value="">Select Job Type</option>
-        <option value="Full Time">Full Time</option>
-        <option value="Part Time">Part Time</option>
-        <option value="Contract">Contract</option>
-        <option value="Internship">Internship</option>
-      </select>
+      <div class="form-type" id="form-type">
+        <label for="">Job Type</label>
+        <select name=" job_type" id="job_type">
+          <option value="">Select Job Type</option>
+          <option value="Full Time">Full Time</option>
+          <option value="Part Time">Part Time</option>
+          <option value="Contract">Contract</option>
+          <option value="Internship">Internship</option>
+        </select>
+      </div>
       <br>
       <!-- one check box -->
-      <label for="">Job Location</label>
-      <input type="checkbox" name="job_location" id="job_location" value="Remote">Remote
-      <input type="checkbox" name="job_location" id="job_location" value="Local">Local
+      <div class="form-location" id="form-location">
+        <label for="">Job Location</label>
+        <input type="checkbox" name="job_location" id="job_location" value="Remote">Remote
+        <input type="checkbox" name="job_location" id="job_location" value="Local">Local
+      </div>
       <!-- one text area -->
       <br>
-      <label for="">Job Description</label>
-      <textarea name="job_description" id="job_description" cols="30" rows="10"></textarea>
-      <!-- submit button -->
-      <input type="submit" value="Submit">
-
-
+      <div class="form-description" id="form-description">
+        <label for="">Job Description</label>
+        <textarea name="job_description" id="job_description" cols="30" rows="10"></textarea>
+      </div>
+      <!-- Save button -->
+      <div class="formSave" id="formSave">
+        <button>
+          Save
+        </button>
+        <!-- submit button -->
+        <div class="form-submit" id="form-submit">
+          <button type="submit" name="submit" class="submit">Submit</button>
+        </div>
 
     </form>
 
