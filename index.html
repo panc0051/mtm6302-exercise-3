@@ -13,54 +13,50 @@
 </head>
 
 <body>
+
+
   <header class="profile-header">
     <h1>Job Listing</h1>
     <!--Form Requirement 
     The form should include at least one textbox, one selectbox, one checkbox, and one textarea.
   -->
-    <form action="" class="form" id="form">
-      <!-- one text box -->
-      <div class="form-title" id="form-title">
-        <label for="">Full Name</label>
-        <input type="text" name="job_title" id="job_title" placeholder="John Doe">
+    <div id="today"></div>
+    <div id="saved"></div>
+    <form action="" id="form" class="p-5 bg-light">
+      <!-- The form includes at at least one textbox, one selectbox, one checkbox, and one textarea.	 -->
+      <label class="form-label title">Full Name</label>
+      <input type="text" id="title" class="form-control mb-3">
+
+      <label for="" class="form-label">Current Employment Status</label>
+      <select name="" id="" class="form-control mb-3">
+        <option value="">Select</option>
+        <option value="">Full Time</option>
+        <option value="">Part Time</option>
+        <option value="">Contract</option>
+        <option value="">Internship</option>
+        <option value="">Other</option>
+      </select>
+
+      <label for="" class="form-label">What is your qualifications</label>
+      <textarea name="" id="" cols="30" rows="10" class="form-control mb-3"></textarea>
+
+      <!-- check mark of Accept terms and condition -->
+      <div class="form-check form-label">
+        <input type="checkbox" class="form-check-input form-label" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Accept terms and condition</label>
       </div>
-      <br>
-      <!-- one select box -->
-      <div class="form-type" id="form-type">
-        <label for="">Job Type</label>
-        <select name=" job_type" id="job_type">
-          <option value="">Select Job Type</option>
-          <option value="Full Time">Full Time</option>
-          <option value="Part Time">Part Time</option>
-          <option value="Contract">Contract</option>
-          <option value="Internship">Internship</option>
-        </select>
-      </div>
-      <br>
-      <!-- one check box -->
-      <div class="form-location" id="form-location">
-        <label for="">Job Location</label>
-        <input type="checkbox" name="job_location" id="job_location" value="Remote">Remote
-        <input type="checkbox" name="job_location" id="job_location" value="Local">Local
-      </div>
-      <!-- one text area -->
-      <br>
-      <div class="form-description" id="form-description">
-        <label for="">Job Description</label>
-        <textarea name="job_description" id="job_description" cols="30" rows="10"></textarea>
-      </div>
-      <!-- Save button -->
-      <div class="formSave" id="formSave">
-        <button>
-          Save
-        </button>
-        <!-- submit button -->
-        <div class="form-submit" id="form-submit">
-          <button type="submit" name="submit" class="submit">Submit</button>
-        </div>
+
+
+
+      <label for="" class="form-label">Date and Time</label>
+      <input type="datetime-local" id="datetime" class="form-control mb-3">
+
+      <button class="btn btn-primary" id="submit">Save Date</button>
+
+      <!-- submit button -->
+      <button class="btn btn-primary" id="submit">Submit</button>
 
     </form>
-    <div class="today"></div>
 
     <script src="script.js"></script>
 </body>
