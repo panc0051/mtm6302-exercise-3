@@ -1,3 +1,11 @@
+html,
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
 body {
     background-color: #f2f2f2;
 }
